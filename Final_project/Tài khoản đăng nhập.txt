@@ -1,0 +1,6 @@
+- Tài khoản Nhà tuyển dụng: 
+	tên tài khoản: user
+	mật khẩu: 123456789
+- Tài khoản ứng viên:
+	tên tài khoản: ungvien
+	mật khẩu: 123456

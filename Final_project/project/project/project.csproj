@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEA6EE2A-DA69-4810-B729-83711F5901DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>project</RootNamespace>
+    <AssemblyName>project</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Core.2.1.7\lib\net48\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinForms.2.1.7\lib\net48\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Drawing.Common, Version=2022.11.10457.0, Culture=neutral, PublicKeyToken=8d7e55c97b3e9835, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.System.Drawing.2022.11.10457\lib\netstandard2.0\IronSoftware.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IronXL, Version=2022.12.10926.0, Culture=neutral, PublicKeyToken=0f5804b6690bad1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronXL.Excel.2022.12.10926\lib\netstandard2.0\IronXL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Common, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Common.6.4.0\lib\net472\NuGet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Configuration, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Configuration.6.4.0\lib\net472\NuGet.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Frameworks, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Frameworks.6.4.0\lib\net472\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Packaging, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Packaging.6.4.0\lib\net472\NuGet.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Protocol, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Protocol.6.4.0\lib\net472\NuGet.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Versioning, Version=6.4.0.123, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Versioning.6.4.0\lib\net472\NuGet.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.7.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReaLTaiizor.3.7.8.8\lib\net48\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.3\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.7.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apply.Designer.cs">
+      <DependentUpon>Apply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongViec.Designer.cs">
+      <DependentUpon>CongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangCongViec.Designer.cs">
+      <DependentUpon>DangCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiUngTuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiUngTuyen.Designer.cs">
+      <DependentUpon>NguoiUngTuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RJControls\MenuColorTable.cs" />
+    <Compile Include="RJControls\MenuRenderer.cs" />
+    <Compile Include="RJControls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJDropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJControls\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NhaTuyenDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhaTuyenDung.Designer.cs">
+      <DependentUpon>NhaTuyenDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CVUngVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CVUngVien.Designer.cs">
+      <DependentUpon>CVUngVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaoCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoCV.Designer.cs">
+      <DependentUpon>TaoCV.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Apply.resx">
+      <DependentUpon>Apply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongViec.resx">
+      <DependentUpon>CongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangCongViec.resx">
+      <DependentUpon>DangCongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiUngTuyen.resx">
+      <DependentUpon>NguoiUngTuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="RJControls\RJCircularPictureBox.resx">
+      <DependentUpon>RJCircularPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJControls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhaTuyenDung.resx">
+      <DependentUpon>NhaTuyenDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CVUngVien.resx">
+      <DependentUpon>CVUngVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoCV.resx">
+      <DependentUpon>TaoCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\account.xlsx" />
+    <None Include="Resources\congty.xlsx" />
+    <None Include="Resources\Congviec.csv" />
+    <None Include="Resources\Congviec.xlsx" />
+    <None Include="Resources\Congviec_data.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\111025_phone_icon.png" />
+    <Content Include="Resources\2824438_academic_clip_exam_note_paper_icon.png" />
+    <Content Include="Resources\309041_users_group_people_icon.png" />
+    <Content Include="Resources\352521_location_on_icon.png" />
+    <Content Include="Resources\3915748_direction_globe_location_maps_navigation_icon.png" />
+    <Content Include="Resources\6000107_coronavirus_home_jobs_teleworking_working_icon.png" />
+    <None Include="Resources\8541829_eye_vision_view_icon.png" />
+    <None Include="Resources\8665352_eye_slash_icon.png" />
+    <Content Include="Resources\8673632_ic_fluent_person_filled_icon.png" />
+    <Content Include="Resources\88437_partner_search_icon.ico" />
+    <Content Include="Resources\897226_balance spendings_budget_money_save money_icon.png" />
+    <Content Include="Resources\9004849_envelope_mail_message_email_icon.png" />
+    <Content Include="Resources\Logo\1.png" />
+    <Content Include="Resources\Logo\10.png" />
+    <Content Include="Resources\Logo\100.png" />
+    <Content Include="Resources\Logo\101.png" />
+    <Content Include="Resources\Logo\102.png" />
+    <Content Include="Resources\Logo\103.png" />
+    <Content Include="Resources\Logo\104.png" />
+    <Content Include="Resources\Logo\105.png" />
+    <Content Include="Resources\Logo\106.png" />
+    <Content Include="Resources\Logo\107.png" />
+    <Content Include="Resources\Logo\108.png" />
+    <Content Include="Resources\Logo\109.png" />
+    <Content Include="Resources\Logo\11.png" />
+    <Content Include="Resources\Logo\110.png" />
+    <Content Include="Resources\Logo\111.png" />
+    <Content Include="Resources\Logo\112.png" />
+    <Content Include="Resources\Logo\113.png" />
+    <Content Include="Resources\Logo\114.png" />
+    <Content Include="Resources\Logo\115.png" />
+    <Content Include="Resources\Logo\116.png" />
+    <Content Include="Resources\Logo\117.png" />
+    <Content Include="Resources\Logo\118.png" />
+    <Content Include="Resources\Logo\119.png" />
+    <Content Include="Resources\Logo\12.png" />
+    <Content Include="Resources\Logo\120.png" />
+    <Content Include="Resources\Logo\121.png" />
+    <Content Include="Resources\Logo\122.png" />
+    <Content Include="Resources\Logo\123.png" />
+    <Content Include="Resources\Logo\124.png" />
+    <Content Include="Resources\Logo\125.png" />
+    <Content Include="Resources\Logo\126.png" />
+    <Content Include="Resources\Logo\127.png" />
+    <Content Include="Resources\Logo\128.png" />
+    <Content Include="Resources\Logo\129.png" />
+    <Content Include="Resources\Logo\13.png" />
+    <Content Include="Resources\Logo\130.png" />
+    <Content Include="Resources\Logo\131.png" />
+    <Content Include="Resources\Logo\132.png" />
+    <Content Include="Resources\Logo\133.png" />
+    <Content Include="Resources\Logo\134.png" />
+    <Content Include="Resources\Logo\135.png" />
+    <Content Include="Resources\Logo\136.png" />
+    <Content Include="Resources\Logo\137.png" />
+    <Content Include="Resources\Logo\138.png" />
+    <Content Include="Resources\Logo\139.png" />
+    <Content Include="Resources\Logo\14.png" />
+    <Content Include="Resources\Logo\140.png" />
+    <Content Include="Resources\Logo\141.png" />
+    <Content Include="Resources\Logo\142.png" />
+    <Content Include="Resources\Logo\143.png" />
+    <Content Include="Resources\Logo\144.png" />
+    <Content Include="Resources\Logo\145.png" />
+    <Content Include="Resources\Logo\146.png" />
+    <Content Include="Resources\Logo\147.png" />
+    <Content Include="Resources\Logo\148.png" />
+    <Content Include="Resources\Logo\149.png" />
+    <Content Include="Resources\Logo\15.png" />
+    <Content Include="Resources\Logo\150.png" />
+    <Content Include="Resources\Logo\151.png" />
+    <Content Include="Resources\Logo\152.png" />
+    <Content Include="Resources\Logo\153.png" />
+    <Content Include="Resources\Logo\154.png" />
+    <Content Include="Resources\Logo\155.png" />
+    <Content Include="Resources\Logo\156.png" />
+    <Content Include="Resources\Logo\157.png" />
+    <Content Include="Resources\Logo\158.png" />
+    <Content Include="Resources\Logo\159.png" />
+    <Content Include="Resources\Logo\16.png" />
+    <Content Include="Resources\Logo\160.png" />
+    <Content Include="Resources\Logo\161.png" />
+    <Content Include="Resources\Logo\162.png" />
+    <Content Include="Resources\Logo\163.png" />
+    <Content Include="Resources\Logo\164.png" />
+    <Content Include="Resources\Logo\165.png" />
+    <Content Include="Resources\Logo\166.png" />
+    <Content Include="Resources\Logo\167.png" />
+    <Content Include="Resources\Logo\168.png" />
+    <Content Include="Resources\Logo\169.png" />
+    <Content Include="Resources\Logo\17.png" />
+    <Content Include="Resources\Logo\170.png" />
+    <Content Include="Resources\Logo\171.png" />
+    <Content Include="Resources\Logo\172.png" />
+    <Content Include="Resources\Logo\173.png" />
+    <Content Include="Resources\Logo\174.png" />
+    <Content Include="Resources\Logo\175.png" />
+    <Content Include="Resources\Logo\176.png" />
+    <Content Include="Resources\Logo\177.png" />
+    <Content Include="Resources\Logo\178.png" />
+    <Content Include="Resources\Logo\179.png" />
+    <Content Include="Resources\Logo\18.png" />
+    <Content Include="Resources\Logo\180.png" />
+    <Content Include="Resources\Logo\181.png" />
+    <Content Include="Resources\Logo\182.png" />
+    <Content Include="Resources\Logo\183.png" />
+    <Content Include="Resources\Logo\184.png" />
+    <Content Include="Resources\Logo\185.png" />
+    <Content Include="Resources\Logo\186.png" />
+    <Content Include="Resources\Logo\187.png" />
+    <Content Include="Resources\Logo\188.png" />
+    <Content Include="Resources\Logo\189.png" />
+    <Content Include="Resources\Logo\19.png" />
+    <Content Include="Resources\Logo\190.png" />
+    <Content Include="Resources\Logo\191.png" />
+    <Content Include="Resources\Logo\192.png" />
+    <Content Include="Resources\Logo\193.png" />
+    <Content Include="Resources\Logo\194.png" />
+    <Content Include="Resources\Logo\195.png" />
+    <Content Include="Resources\Logo\196.png" />
+    <Content Include="Resources\Logo\197.png" />
+    <Content Include="Resources\Logo\198.png" />
+    <Content Include="Resources\Logo\199.png" />
+    <Content Include="Resources\Logo\2.png" />
+    <Content Include="Resources\Logo\20.png" />
+    <Content Include="Resources\Logo\200.png" />
+    <Content Include="Resources\Logo\201.png" />
+    <Content Include="Resources\Logo\202.png" />
+    <Content Include="Resources\Logo\203.png" />
+    <Content Include="Resources\Logo\204.png" />
+    <Content Include="Resources\Logo\205.png" />
+    <Content Include="Resources\Logo\206.png" />
+    <Content Include="Resources\Logo\207.png" />
+    <Content Include="Resources\Logo\208.png" />
+    <Content Include="Resources\Logo\209.png" />
+    <Content Include="Resources\Logo\21.png" />
+    <Content Include="Resources\Logo\210.png" />
+    <Content Include="Resources\Logo\211.png" />
+    <Content Include="Resources\Logo\212.png" />
+    <Content Include="Resources\Logo\213.png" />
+    <Content Include="Resources\Logo\214.png" />
+    <Content Include="Resources\Logo\215.png" />
+    <Content Include="Resources\Logo\216.png" />
+    <Content Include="Resources\Logo\217.png" />
+    <Content Include="Resources\Logo\218.png" />
+    <Content Include="Resources\Logo\219.png" />
+    <Content Include="Resources\Logo\22.png" />
+    <Content Include="Resources\Logo\220.png" />
+    <Content Include="Resources\Logo\221.png" />
+    <Content Include="Resources\Logo\222.png" />
+    <Content Include="Resources\Logo\223.png" />
+    <Content Include="Resources\Logo\224.png" />
+    <Content Include="Resources\Logo\225.png" />
+    <Content Include="Resources\Logo\226.png" />
+    <Content Include="Resources\Logo\227.png" />
+    <Content Include="Resources\Logo\228.png" />
+    <Content Include="Resources\Logo\229.png" />
+    <Content Include="Resources\Logo\23.png" />
+    <Content Include="Resources\Logo\230.png" />
+    <Content Include="Resources\Logo\231.png" />
+    <Content Include="Resources\Logo\232.png" />
+    <Content Include="Resources\Logo\233.png" />
+    <Content Include="Resources\Logo\234.png" />
+    <Content Include="Resources\Logo\235.png" />
+    <Content Include="Resources\Logo\236.png" />
+    <Content Include="Resources\Logo\237.png" />
+    <Content Include="Resources\Logo\238.png" />
+    <Content Include="Resources\Logo\239.png" />
+    <Content Include="Resources\Logo\24.png" />
+    <Content Include="Resources\Logo\240.png" />
+    <Content Include="Resources\Logo\241.png" />
+    <Content Include="Resources\Logo\242.png" />
+    <Content Include="Resources\Logo\243.png" />
+    <Content Include="Resources\Logo\244.png" />
+    <Content Include="Resources\Logo\245.png" />
+    <Content Include="Resources\Logo\246.png" />
+    <Content Include="Resources\Logo\247.png" />
+    <Content Include="Resources\Logo\248.png" />
+    <Content Include="Resources\Logo\249.png" />
+    <Content Include="Resources\Logo\25.png" />
+    <Content Include="Resources\Logo\250.png" />
+    <Content Include="Resources\Logo\251.png" />
+    <Content Include="Resources\Logo\252.png" />
+    <Content Include="Resources\Logo\253.png" />
+    <Content Include="Resources\Logo\254.png" />
+    <Content Include="Resources\Logo\255.png" />
+    <Content Include="Resources\Logo\256.png" />
+    <Content Include="Resources\Logo\257.png" />
+    <Content Include="Resources\Logo\258.png" />
+    <Content Include="Resources\Logo\259.png" />
+    <Content Include="Resources\Logo\26.png" />
+    <Content Include="Resources\Logo\260.png" />
+    <Content Include="Resources\Logo\261.png" />
+    <Content Include="Resources\Logo\262.png" />
+    <Content Include="Resources\Logo\263.png" />
+    <Content Include="Resources\Logo\264.png" />
+    <Content Include="Resources\Logo\265.png" />
+    <Content Include="Resources\Logo\266.png" />
+    <Content Include="Resources\Logo\267.png" />
+    <Content Include="Resources\Logo\268.png" />
+    <Content Include="Resources\Logo\269.png" />
+    <Content Include="Resources\Logo\27.png" />
+    <Content Include="Resources\Logo\270.png" />
+    <Content Include="Resources\Logo\271.png" />
+    <Content Include="Resources\Logo\272.png" />
+    <Content Include="Resources\Logo\273.png" />
+    <Content Include="Resources\Logo\274.png" />
+    <Content Include="Resources\Logo\275.png" />
+    <Content Include="Resources\Logo\276.png" />
+    <Content Include="Resources\Logo\277.png" />
+    <Content Include="Resources\Logo\278.png" />
+    <Content Include="Resources\Logo\279.png" />
+    <Content Include="Resources\Logo\28.png" />
+    <Content Include="Resources\Logo\280.png" />
+    <Content Include="Resources\Logo\281.png" />
+    <Content Include="Resources\Logo\282.png" />
+    <Content Include="Resources\Logo\283.png" />
+    <Content Include="Resources\Logo\284.png" />
+    <Content Include="Resources\Logo\285.png" />
+    <Content Include="Resources\Logo\286.png" />
+    <Content Include="Resources\Logo\287.png" />
+    <Content Include="Resources\Logo\288.png" />
+    <Content Include="Resources\Logo\289.png" />
+    <Content Include="Resources\Logo\29.png" />
+    <Content Include="Resources\Logo\290.png" />
+    <Content Include="Resources\Logo\291.png" />
+    <Content Include="Resources\Logo\292.png" />
+    <Content Include="Resources\Logo\293.png" />
+    <Content Include="Resources\Logo\294.png" />
+    <Content Include="Resources\Logo\295.png" />
+    <Content Include="Resources\Logo\296.png" />
+    <Content Include="Resources\Logo\297.png" />
+    <Content Include="Resources\Logo\298.png" />
+    <Content Include="Resources\Logo\299.png" />
+    <Content Include="Resources\Logo\3.png" />
+    <Content Include="Resources\Logo\30.png" />
+    <Content Include="Resources\Logo\300.png" />
+    <Content Include="Resources\Logo\301.png" />
+    <Content Include="Resources\Logo\302.png" />
+    <Content Include="Resources\Logo\303.png" />
+    <Content Include="Resources\Logo\304.png" />
+    <Content Include="Resources\Logo\305.png" />
+    <Content Include="Resources\Logo\306.png" />
+    <Content Include="Resources\Logo\307.png" />
+    <Content Include="Resources\Logo\308.png" />
+    <Content Include="Resources\Logo\309.png" />
+    <Content Include="Resources\Logo\31.png" />
+    <Content Include="Resources\Logo\310.png" />
+    <Content Include="Resources\Logo\311.png" />
+    <Content Include="Resources\Logo\312.png" />
+    <Content Include="Resources\Logo\313.png" />
+    <Content Include="Resources\Logo\314.png" />
+    <Content Include="Resources\Logo\315.png" />
+    <Content Include="Resources\Logo\316.png" />
+    <Content Include="Resources\Logo\317.png" />
+    <Content Include="Resources\Logo\318.png" />
+    <Content Include="Resources\Logo\319.png" />
+    <Content Include="Resources\Logo\32.png" />
+    <Content Include="Resources\Logo\320.png" />
+    <Content Include="Resources\Logo\321.png" />
+    <Content Include="Resources\Logo\322.png" />
+    <Content Include="Resources\Logo\323.png" />
+    <Content Include="Resources\Logo\324.png" />
+    <Content Include="Resources\Logo\325.png" />
+    <Content Include="Resources\Logo\326.png" />
+    <Content Include="Resources\Logo\327.png" />
+    <Content Include="Resources\Logo\328.png" />
+    <Content Include="Resources\Logo\329.png" />
+    <Content Include="Resources\Logo\33.png" />
+    <Content Include="Resources\Logo\330.png" />
+    <Content Include="Resources\Logo\331.png" />
+    <Content Include="Resources\Logo\332.png" />
+    <Content Include="Resources\Logo\333.png" />
+    <Content Include="Resources\Logo\334.png" />
+    <Content Include="Resources\Logo\335.png" />
+    <Content Include="Resources\Logo\336.png" />
+    <Content Include="Resources\Logo\337.png" />
+    <Content Include="Resources\Logo\338.png" />
+    <Content Include="Resources\Logo\339.png" />
+    <Content Include="Resources\Logo\34.png" />
+    <Content Include="Resources\Logo\340.png" />
+    <Content Include="Resources\Logo\341.png" />
+    <Content Include="Resources\Logo\342.png" />
+    <Content Include="Resources\Logo\343.png" />
+    <Content Include="Resources\Logo\344.png" />
+    <Content Include="Resources\Logo\345.png" />
+    <Content Include="Resources\Logo\346.png" />
+    <Content Include="Resources\Logo\347.png" />
+    <Content Include="Resources\Logo\348.png" />
+    <Content Include="Resources\Logo\349.png" />
+    <Content Include="Resources\Logo\35.png" />
+    <Content Include="Resources\Logo\350.png" />
+    <Content Include="Resources\Logo\351.png" />
+    <Content Include="Resources\Logo\352.png" />
+    <Content Include="Resources\Logo\353.png" />
+    <Content Include="Resources\Logo\354.png" />
+    <Content Include="Resources\Logo\355.png" />
+    <Content Include="Resources\Logo\356.png" />
+    <Content Include="Resources\Logo\357.png" />
+    <Content Include="Resources\Logo\358.png" />
+    <Content Include="Resources\Logo\359.png" />
+    <Content Include="Resources\Logo\36.png" />
+    <Content Include="Resources\Logo\360.png" />
+    <Content Include="Resources\Logo\361.png" />
+    <Content Include="Resources\Logo\362.png" />
+    <Content Include="Resources\Logo\363.png" />
+    <Content Include="Resources\Logo\364.png" />
+    <Content Include="Resources\Logo\365.png" />
+    <Content Include="Resources\Logo\366.png" />
+    <Content Include="Resources\Logo\367.png" />
+    <Content Include="Resources\Logo\368.png" />
+    <Content Include="Resources\Logo\369.png" />
+    <Content Include="Resources\Logo\37.png" />
+    <Content Include="Resources\Logo\370.png" />
+    <Content Include="Resources\Logo\371.png" />
+    <Content Include="Resources\Logo\372.png" />
+    <Content Include="Resources\Logo\373.png" />
+    <Content Include="Resources\Logo\374.png" />
+    <Content Include="Resources\Logo\375.png" />
+    <Content Include="Resources\Logo\376.png" />
+    <Content Include="Resources\Logo\377.png" />
+    <Content Include="Resources\Logo\378.png" />
+    <Content Include="Resources\Logo\379.png" />
+    <Content Include="Resources\Logo\38.png" />
+    <Content Include="Resources\Logo\380.png" />
+    <Content Include="Resources\Logo\381.png" />
+    <Content Include="Resources\Logo\382.png" />
+    <Content Include="Resources\Logo\383.png" />
+    <Content Include="Resources\Logo\384.png" />
+    <Content Include="Resources\Logo\39.png" />
+    <Content Include="Resources\Logo\4.png" />
+    <Content Include="Resources\Logo\40.png" />
+    <Content Include="Resources\Logo\41.png" />
+    <Content Include="Resources\Logo\42.png" />
+    <Content Include="Resources\Logo\43.png" />
+    <Content Include="Resources\Logo\44.png" />
+    <Content Include="Resources\Logo\45.png" />
+    <Content Include="Resources\Logo\46.png" />
+    <Content Include="Resources\Logo\47.png" />
+    <Content Include="Resources\Logo\48.png" />
+    <Content Include="Resources\Logo\49.png" />
+    <Content Include="Resources\Logo\5.png" />
+    <Content Include="Resources\Logo\50.png" />
+    <Content Include="Resources\Logo\51.png" />
+    <Content Include="Resources\Logo\52.png" />
+    <Content Include="Resources\Logo\53.png" />
+    <Content Include="Resources\Logo\54.png" />
+    <Content Include="Resources\Logo\55.png" />
+    <Content Include="Resources\Logo\56.png" />
+    <Content Include="Resources\Logo\57.png" />
+    <Content Include="Resources\Logo\58.png" />
+    <Content Include="Resources\Logo\59.png" />
+    <Content Include="Resources\Logo\6.png" />
+    <Content Include="Resources\Logo\60.png" />
+    <Content Include="Resources\Logo\61.png" />
+    <Content Include="Resources\Logo\62.png" />
+    <Content Include="Resources\Logo\63.png" />
+    <Content Include="Resources\Logo\64.png" />
+    <Content Include="Resources\Logo\65.png" />
+    <Content Include="Resources\Logo\66.png" />
+    <Content Include="Resources\Logo\67.png" />
+    <Content Include="Resources\Logo\68.png" />
+    <Content Include="Resources\Logo\69.png" />
+    <Content Include="Resources\Logo\7.png" />
+    <Content Include="Resources\Logo\70.png" />
+    <Content Include="Resources\Logo\71.png" />
+    <Content Include="Resources\Logo\72.png" />
+    <Content Include="Resources\Logo\73.png" />
+    <Content Include="Resources\Logo\74.png" />
+    <Content Include="Resources\Logo\75.png" />
+    <Content Include="Resources\Logo\76.png" />
+    <Content Include="Resources\Logo\77.png" />
+    <Content Include="Resources\Logo\78.png" />
+    <Content Include="Resources\Logo\79.png" />
+    <Content Include="Resources\Logo\8.png" />
+    <Content Include="Resources\Logo\80.png" />
+    <Content Include="Resources\Logo\81.png" />
+    <Content Include="Resources\Logo\82.png" />
+    <Content Include="Resources\Logo\83.png" />
+    <Content Include="Resources\Logo\84.png" />
+    <Content Include="Resources\Logo\85.png" />
+    <Content Include="Resources\Logo\86.png" />
+    <Content Include="Resources\Logo\87.png" />
+    <Content Include="Resources\Logo\88.png" />
+    <Content Include="Resources\Logo\89.png" />
+    <Content Include="Resources\Logo\9.png" />
+    <Content Include="Resources\Logo\90.png" />
+    <Content Include="Resources\Logo\91.png" />
+    <Content Include="Resources\Logo\92.png" />
+    <Content Include="Resources\Logo\93.png" />
+    <Content Include="Resources\Logo\94.png" />
+    <Content Include="Resources\Logo\95.png" />
+    <Content Include="Resources\Logo\96.png" />
+    <Content Include="Resources\Logo\97.png" />
+    <Content Include="Resources\Logo\98.png" />
+    <Content Include="Resources\Logo\99.png" />
+    <Content Include="Resources\Logo\load.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
